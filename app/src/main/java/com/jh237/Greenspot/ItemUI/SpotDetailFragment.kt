@@ -2,30 +2,20 @@ package com.jh237.Greenspot.ItemUI
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity.RESULT_OK
-import android.content.Intent
-
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-
 import android.location.Location
 import android.location.LocationRequest
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.provider.MediaStore
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.result.registerForActivityResult
-
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
-
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
@@ -42,7 +32,6 @@ import com.jh237.Greenspot.databinding.FragmentSpotDetailBinding
 import kotlinx.coroutines.launch
 import java.io.File
 import java.text.SimpleDateFormat
-
 import java.util.Date
 
 class SpotDetailFragment : Fragment() {
@@ -152,7 +141,7 @@ class SpotDetailFragment : Fragment() {
     //This is updates the view inside the detail fragment
 
     //TODO Change the data structures so that the coordinates are stored better | Maybe done, reconsider
-    //TODO Implement taking a photo of the spot
+    //TODO Implement taking a photo of the spot | Taking photo complete, work out how to correctly save it.
     //TODO Implement delete button
     //TODO Implement a share button
 
