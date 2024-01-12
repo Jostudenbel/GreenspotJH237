@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment"
+    tools:context=".MainActivity">
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.jh237.Greenspot.ListUI.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_spot_list">
+        <action
+            android:id="@+id/showSpotDetails"
+            app:destination="@id/spotDetailFragment" />
+        <action
+            android:id="@+id/showWebView"
+            app:destination="@id/helpMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spotDetailFragment"
+        android:name="com.jh237.Greenspot.ItemUI.SpotDetailFragment"
+        android:label="SpotDetailFragment"
+        tools:layout="@layout/fragment_spot_detail">
+        <argument
+            android:name="spotId"
+            app:argType="java.util.UUID" />
+        <action
+            android:id="@+id/selectDate"
+            app:destination="@id/datePickerFragment" />
+        <action
+            android:id="@+id/showMap"
+            app:destination="@id/mapViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpMenuFragment"
+        android:name="com.jh237.Greenspot.MenuItems.HelpWebViewFragment"
+        android:label="HelpMenuFragment" />
+    <dialog
+        android:id="@+id/datePickerFragment"
+        android:name="com.jh237.Greenspot.MenuItems.DatePickerFragment"
+        android:label="DatePickerFragment">
+        <argument
+            android:name="spotDate"
+            app:argType="java.util.Date" />
+    </dialog>
+    <fragment
+        android:id="@+id/mapViewFragment"
+        android:name="com.jh237.Greenspot.MenuItems.MapViewFragment"
+        android:label="MapViewFragment">
+        <argument
+            android:name="latitude"
+            app:argType="float" />
+        <argument
+            android:name="longitude"
+            app:argType="float" />
+        <argument
+            android:name="placeName"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
